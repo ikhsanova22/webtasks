@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        #news{
+            border:1px solid red;
+            width:400px;
+            height:300px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="news"></div>
+        <button id="sport">Load Sport news</button>
+        <button id="politics">Load Politics news</button>
+        <button id="bussiness">Load Bussiness news</button>
+
+
+        <script>
+            let newsFromWeb = document.getElementById("news");
+            let sport = document.getElementById('sport');
+            let politic = document.getElementById('politics');
+            let bussiness = document.getElementById('bussiness');
+            let typeOfNews = [sport,politic,bussiness];
+
+
+            let news = {
+                "sport":
+                    {"header":"Messi scored 5 goals", "text":"Messi scored 5 goals in last match and became top-scorer of the league"},
+                "bussiness":
+                    {"header":"Dow Jones index has fallen", "text":"Dow Jones index has fallen, because of prices for petrol"},
+                "politics":
+                    {"header":"Trump visited UK", "text":"Trump started his foreign tour by visiting UK"}
+            };
+            
+
+            for(let i =0 ;i<typeOfNews.length;i++){
+                typeOfNews[i].addEventListener("click",function(){
+                    let idOfNews = this.id.toString();
+                    console.log(idOfNews);
+                    newsFromWeb.innerHTML = "<h1>" + news[idOfNews]["header"] +"</h1><br><p>"+ news[idOfNews]["text"]+"</p>";
+                });
+            }
+
+        </script>
+    </body>
+</html>
