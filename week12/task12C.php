@@ -20,7 +20,7 @@
         
     }
 ?>
-<form action="taskC.php" method="post">
+<form action="task12C.php" method="post">
     <input type="text" name="name">
     <input type="password" name="pass">
     <input type="submit">
